@@ -1,0 +1,136 @@
+baseURL: "https://wanmywan.github.io/"
+languageCode: "en-us"
+title: "wanmywan"
+theme: "PaperMod"
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+pygmentsUseClasses: true
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+# Enables client-side search (fuse.js) by exposing JSON on the home page
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production
+  title: "wanmywan"
+  description: "Research & notes on red team tradecraft, offensive security, and hacking."
+  keywords: ["red team", "offensive security", "pentest", "hacking", "research"]
+  author: "wanmywan"
+  DateFormat: "2006-01-02"
+
+  defaultTheme: dark
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowToc: true
+  TocOpen: false
+  ShowRssButtonInSectionTermList: false
+  displayFullLangName: true
+
+  # Homepage tampil sebagai kartu profil (foto + judul + tombol)
+  profileMode:
+    enabled: true
+    title: "wanmywan"
+    subtitle: "Red team • offensive security"
+    imageUrl: "images/profile.jpg"
+    imageTitle: "wanmywan"
+    imageWidth: 140
+    imageHeight: 140
+    buttons:
+      - name: 📝 Posts
+        url: posts
+      - name: 🗂️ Categories
+        url: categories
+      - name: 🏷️ Tags
+        url: tags
+      - name: 👤 About Me
+        url: about
+
+  socialIcons:
+    - name: github
+      title: GitHub
+      url: "https://github.com/wanmywan"
+    - name: x
+      title: X
+      url: "https://x.com/wanzroot"
+    - name: youtube
+      title: YouTube
+      url: "https://www.youtube.com/@lowanze"
+    - name: linkedin
+      title: LinkedIn
+      url: "https://www.linkedin.com/in/alwan-wijaya-55652b268"
+
+  label:
+    text: "wanmywan"
+    icon: /favicon.ico
+    iconHeight: 35
+
+  assets:
+    disableHLJS: true
+    favicon: "/favicon.ico"
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 20
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 30
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 40
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 50
+
+taxonomies:
+  category: categories
+  tag: tags
+
+# Syntax highlighting
+markup:
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    style: monokai
+  goldmark:
+    renderer:
+      unsafe: true
+
+pagination:
+  pagerSize: 10
